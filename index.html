@@ -36,7 +36,11 @@
         </div>
     </div>
     <script>
-            
+         
+
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${'London'}&appid=8cb6069befbbb8c52a74a977a899ed39`)
+        .then(res => res.json())
+        .then(data => console.log(data))           
     </script>
 </body>
 
