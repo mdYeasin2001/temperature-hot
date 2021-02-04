@@ -48,7 +48,11 @@
                     // console.log(data)
 
                     const name = data.name; // console.log(data.name);
-                    document.getElementById('city-name').innerText = name;
+                    if(name == undefined){
+                        alert("City is not defined")
+                    }else{
+                        document.getElementById('city-name').innerText = name;
+                    }
 
                     const temp = data.main.temp;
                     document.getElementById('temp').innerText = temp;// console.log(data.main.temp);
