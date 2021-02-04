@@ -36,7 +36,10 @@
         </div>
     </div>
     <script>
-         
+         document.getElementById('search').addEventListener('click', ()=>{
+            const cityName = document.getElementById('city-name-input').value;
+            // console.log(cityName);
+        });
 
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${'London'}&appid=8cb6069befbbb8c52a74a977a899ed39`)
         .then(res => res.json())
