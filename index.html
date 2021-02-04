@@ -30,10 +30,11 @@
             </div>
         </form>
         <div class="weather-status text-white text-center">
-            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+            <img id="icon" src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
             <h1 id="city-name">Dhaka</h1>
             <h3><span id="temp">38.06</span>&deg;C</h3>
             <h1 id="description" class="lead">Clouds</h1>
+            
         </div>
     </div>
     <script>
@@ -44,7 +45,7 @@
             fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityNameInput}&appid=8cb6069befbbb8c52a74a977a899ed39`)
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                    // console.log(data)
 
                     const name = data.name; // console.log(data.name);
                     document.getElementById('city-name').innerText = name;
@@ -54,6 +55,8 @@
                     
                     const description = data.weather[0].description;
                     document.getElementById('description').innerText = description; // console.log(data.weather[0].description);
+                    const icon = data.weather[0].icon;
+                    document.getElementById('icon').src =`http://openweathermap.org/img/wn/${icon}@2x.png`
                 });
         });
     </script>
