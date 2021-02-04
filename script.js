@@ -14,7 +14,7 @@ document.getElementById('search').addEventListener('click', () => {
                 document.getElementById('city-name').innerText = name;
             }
 
-            const temp = data.main.temp;
+            const temp = (data.main.temp - 273).toFixed(2);
             document.getElementById('temp').innerText = temp;// console.log(data.main.temp);
             
             const description = data.weather[0].description;
